@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import express, { Response, Request, NextFunction } from 'express';
 import { route } from './routes';
 import cors from 'cors';
@@ -26,4 +25,4 @@ app.use(
     },
 );
 
-app.listen(3001, () => console.log('server running on port 3001'));
+app.listen(3000, () => console.log('server running on port 3000'));

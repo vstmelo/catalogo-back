@@ -3,11 +3,10 @@ import { GetFilmesService } from "../service/getFilmesService";
 
 const service = new GetFilmesService();
 
-export class filmesController {
+export class FilmesController {
 
     async getFilmes(req: Request, res: Response): Promise<Response> {
         const filmes = await service.getFilmes();
         return res.json(filmes);
     };
-
 }

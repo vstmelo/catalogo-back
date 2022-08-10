@@ -1,22 +1,21 @@
-import { api } from "../api";
-import { filmeRepository } from "../repositories/filmesRepository";
+import { apiHeroku } from "../api";
+import { SaveBDLocal } from "./saveBDLocalService";
+
+const bdLocal = new SaveBDLocal();
 export interface Iprops {
-    id : string,
+    id: string,
     title: string
     description: string,
     director: string,
     producer: string,
     movie_banner: string
 }
-export interface ISaveLocal {
-    filmes: [{ title: any, producer: any, director: any, movie_banner: any, description: any, id : string }];
-}
 export class GetFilmesService {
 
     async getFilmes() {
         const quantidadePaginas: any[] = [];
 
-        const { data: filmes } = await api.get('/films')
+        const { data: filmes } = await apiHeroku.get('/films')
 
         const dataFilmes = filmes.map((item: any) => {
             return ({
@@ -29,24 +28,10 @@ export class GetFilmesService {
             });
         });
 
-        this.saveBDLocal({ filmes: dataFilmes });
+        bdLocal.save({ filmes: dataFilmes });
 
         return dataFilmes;
 
-    }; 
+    };
 
-    async saveBDLocal(data: ISaveLocal) {
-
-        data.filmes.forEach((filme) => {
-            const filmeLocal = filmeRepository.save({
-                id: filme.id,
-                title: filme.title,
-                movie_banner: filme.movie_banner,
-                description: filme.description,
-                director: filme.director,
-                producer: filme.producer,
-            });
-        });
-    }
-
-}
+} 
