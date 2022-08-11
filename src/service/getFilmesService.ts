@@ -13,9 +13,13 @@ export interface Iprops {
 export class GetFilmesService {
 
     async getFilmes() {
-        const quantidadePaginas: any[] = [];
+        
 
-        const { data: filmes } = await apiHeroku.get('/films')
+        const { data: filmes } = await apiHeroku.get('/films', {
+            params:{
+                per_page: 50
+            }
+        })
 
         const dataFilmes = filmes.map((item: any) => {
             return ({
