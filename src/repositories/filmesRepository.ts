@@ -1,4 +1,4 @@
 import { AppDataSource } from "../connection";
-import { Filme } from "../model/Filme";
+import { Filmes } from "../model/Filmes";
 
-export const filmeRepository = AppDataSource.getRepository(Filme);
+export const filmeRepository = AppDataSource.getRepository(Filmes);
