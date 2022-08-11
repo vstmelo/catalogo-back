@@ -16,10 +16,11 @@ export class GetFilmesLocaisService {
         const filmes = await filmeRepository
             .createQueryBuilder("filmes")
             .limit(10)
-            .getMany()
+            .getManyAndCount()
         
             const postCount = filmes.length;
             const perPage = 2;
+        
         const pageCount = Math.ceil(postCount / perPage);
 
         return ({
