@@ -10,7 +10,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.6"
   },
@@ -30,6 +30,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --transpile-only --inspect --respawn --ignore-watch node_modules src/server.ts"
+     "dev": "ts-node-dev --transpile-only --inspect --respawn --ignore-watch node_modules src/server.ts",
+     "start" : "node dist/server.js"
   }
 }
