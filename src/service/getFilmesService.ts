@@ -17,7 +17,7 @@ export class GetFilmesService {
 
         const { data: filmes } = await apiHeroku.get('/films', {
             params:{
-                per_page: 50
+                per_page: 5
             }
         })
 

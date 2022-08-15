@@ -6,7 +6,8 @@ const service = new GetFilmesLocaisService();
 export class FilmesLocaisController {
 
     async getFilmes(req: Request, res: Response): Promise<Response> {
-        const filmesLocais = await service.getFilmesLocais();
+        const paginaAtual = req.params.pagina;
+        const filmesLocais = await service.getFilmesLocais(paginaAtual);
         return res.json(filmesLocais);
     };
 }
