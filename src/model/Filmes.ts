@@ -1,6 +1,6 @@
 import { Column, Entity } from "typeorm";
 
-@Entity("filmes", { schema: "heroku_d60e6747797871b" })
+@Entity("filme", { schema: "filmes" })
 export class Filmes {
   @Column("tinytext", { name: "title" })
   title: string;
@@ -11,12 +11,12 @@ export class Filmes {
   @Column("varchar", { name: "producer", length: 45 })
   producer: string;
 
-  @Column("timestamp", {
-    name: "create_time",
-    nullable: true,
-    default: () => "CURRENT_TIMESTAMP",
-  })
-  createTime: Date | null;
+//   @Column("timestamp", {
+//     name: "create_time",
+//     nullable: true,
+//     default: () => "CURRENT_TIMESTAMP",
+//   })
+//   createTime: Date | null;
 
   @Column("varchar", { primary: true, name: "id", length: 45 })
   id: string;

@@ -5,7 +5,7 @@ import "mysql2";
    
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: 'us-cdbr-east-06.cleardb.net',
+    host: process.env.DB_LOCAL_HOST,
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
@@ -17,4 +17,4 @@ AppDataSource.initialize()
     })
     .catch((err) => {
         console.error("Error during Data Source initialization", err)
-    })  
+    })
