@@ -10,11 +10,11 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     entities: [__dirname + "/model/*.{js,ts}"],
-});
-AppDataSource.initialize() 
+}); 
+AppDataSource.initialize()
     .then(() => { 
         console.log("Data Source has been initialized!")
     })
     .catch((err) => {
         console.error("Error during Data Source initialization", err)
-    })
+    }) 
