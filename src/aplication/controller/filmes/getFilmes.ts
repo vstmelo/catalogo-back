@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetFilmesService } from "../../../domain/filmes/service/getFilmesService";
+import { GetFilmesService } from "../../../domain/filmes/service/getFilmes.Service";
 
 const service = new GetFilmesService();
 
@@ -9,4 +9,5 @@ export class FilmesController {
         const filmes = await service.getFilmes();
         return res.json(filmes);
     };
+
 }

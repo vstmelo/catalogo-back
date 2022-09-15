@@ -8,5 +8,6 @@ const getFilmesLocais = new FilmesLocaisController();
 
 filmeRoute.get('/filmes', getFilmes.getFilmes);
 filmeRoute.get('/filmes-locais/:pagina', getFilmesLocais.getFilmes);
+filmeRoute.get('/search', getFilmesLocais.getSearch);
 
 export {filmeRoute}
