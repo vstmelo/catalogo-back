@@ -1,4 +1,4 @@
-import { filmeRepository } from "../repositories/filmesRepository";
+import { filmeRepository } from "../../../repositories";
 
 export interface Iprops {
     id: string,
