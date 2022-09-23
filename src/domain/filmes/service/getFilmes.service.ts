@@ -2,14 +2,7 @@ import { apiHeroku } from "../../../api";
 import { SaveBDLocal } from "./saveBDLocalService";
 
 const bdLocal = new SaveBDLocal();
-export interface Iprops {
-    id: string,
-    title: string
-    description: string,
-    director: string,
-    producer: string,
-    movie_banner: string
-}
+
 export class GetFilmesService {
 
     async getFilmes() {

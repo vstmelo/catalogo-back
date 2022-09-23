@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetFilmesLocaisService } from "../../../domain/filmes/service/getFilmesLocaisService";
+import { GetFilmesLocaisService } from "../../../domain/filmes/service/getFilmesLocais.service";
 
 const service = new GetFilmesLocaisService();
 

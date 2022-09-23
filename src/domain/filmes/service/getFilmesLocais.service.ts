@@ -1,13 +1,5 @@
 import { filmeRepository } from "../../../repositories";
 
-export interface Iprops {
-    id: string,
-    title: string
-    description: string,
-    director: string,
-    producer: string,
-    movie_banner: string
-}
 
 export class GetFilmesLocaisService {
     async getFilmesLocais(pagina: string): Promise<any> {

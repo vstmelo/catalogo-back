@@ -1,12 +1,10 @@
 import { filmeRepository } from "../../../repositories";
-
-export interface ISaveLocal {
-    filmes: [{ title: any, producer: any, director: any, movie_banner: any, description: any, id: string }];
-}
+import ISaveLocal from "../dtos/saveBDLocal.dto";
 
 export class SaveBDLocal {
 
     async save(data: ISaveLocal) {
+    const films = data.filmes;
 
         data.filmes.forEach((filme) => {
             const filmeLocal = filmeRepository.save({
