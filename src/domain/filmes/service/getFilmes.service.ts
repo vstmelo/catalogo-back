@@ -1,12 +1,12 @@
 import { api, } from "./api";
-import { SaveBDLocal } from "./saveBDLocalService";
+import { SaveBDLocal } from "./saveBDLocal.service";
 
 const bdLocal = new SaveBDLocal();
 
 export class GetFilmesService {
 
     async getFilmes() {
-        
+
 
         const { data: filmes } = await api.get('/films', {
             params:{
@@ -14,7 +14,7 @@ export class GetFilmesService {
             }
         })
 
-        const dataFilmes = filmes.map((item: any) => {
+        const dataFilmes = filmes.map((item: Iprops) => {
             return ({
                 title: item.title,
                 id: item.id,
@@ -30,5 +30,6 @@ export class GetFilmesService {
         return dataFilmes;
 
     };
+
 
 } 
