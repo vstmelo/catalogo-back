@@ -1,4 +1,4 @@
-import { apiHeroku } from "./api";
+import { api, } from "./api";
 import { SaveBDLocal } from "./saveBDLocalService";
 
 const bdLocal = new SaveBDLocal();
@@ -8,7 +8,7 @@ export class GetFilmesService {
     async getFilmes() {
         
 
-        const { data: filmes } = await apiHeroku.get('/films', {
+        const { data: filmes } = await api.get('/films', {
             params:{
                 per_page: 5
             }
