@@ -1,4 +1,4 @@
-import { apiHeroku } from "../../../api";
+import { apiHeroku } from "./api";
 import { SaveBDLocal } from "./saveBDLocalService";
 
 const bdLocal = new SaveBDLocal();

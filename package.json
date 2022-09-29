@@ -33,7 +33,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --transpile-only --inspect --respawn --ignore-watch node_modules src/server.ts",
+    "dev": "ts-node-dev --transpile-only --inspect --respawn --ignore-watch node_modules  src/application/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js --dataSource ./src/connection.ts",
     "start": "node dist/server.js"
   }
 }

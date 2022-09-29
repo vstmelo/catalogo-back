@@ -11,12 +11,6 @@ export class Filmes {
   @Column("varchar", { name: "producer", length: 45 })
   producer: string;
 
-//   @Column("timestamp", {
-//     name: "create_time",
-//     nullable: true,
-//     default: () => "CURRENT_TIMESTAMP",
-//   })
-//   createTime: Date | null;
 
   @Column("varchar", { primary: true, name: "id", length: 45 })
   id: string;
