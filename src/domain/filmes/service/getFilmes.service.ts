@@ -1,4 +1,4 @@
-import { IProps } from "../dtos/saveBDLocal.dto";
+import { IProps } from "../dtos/filme.dto";
 import { api, } from "./api";
 import { SaveBDLocal } from "./saveBDLocal.service";
 
@@ -15,7 +15,7 @@ export class GetFilmesService {
             }
         })
 
-        const dataFilmes = filmes.map((item : IProps) => {
+        const dataFilmes = filmes.map((item: IProps) => {
             return ({
                 title: item.title,
                 id: item.id,
