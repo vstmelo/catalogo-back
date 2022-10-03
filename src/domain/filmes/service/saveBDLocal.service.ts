@@ -6,15 +6,15 @@ export class SaveBDLocal {
     async save(data: ISaveLocal) {
     const films = data.filmes;
 
-        data.filmes.forEach((filme) => {
-            const filmeLocal = filmeRepository.save({
+    const filmeLocal = data.filmes.map((filme) => ({
                 id: filme.id,
                 title: filme.title,
                 movie_banner: filme.movie_banner,
                 description: filme.description,
                 director: filme.director,
                 producer: filme.producer,
-            });
-        });
+            }));
+
+    await filmeRepository.insert(filmeLocal);
     }
 }
