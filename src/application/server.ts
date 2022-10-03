@@ -13,4 +13,4 @@ app.use(route);
 
 app.use(ErrorHandler);
 
-app.listen(3333, () => console.log(`server running on port ${process.env.PORT}`));
+app.listen(3333, () => console.log(`server running on port 3333`));

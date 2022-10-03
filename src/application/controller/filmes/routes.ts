@@ -6,7 +6,8 @@ const filmeRoute = Router();
 const getFilmes = new FilmesController();
 const getFilmesLocais = new FilmesLocaisController();
 
-filmeRoute.get('/filmes', getFilmes.getFilmes);
-filmeRoute.get('/filmes-locais/:pagina', getFilmesLocais.getFilmes);
+filmeRoute.get('/films', getFilmes.getFilmes);
+filmeRoute.get('/films-local/:pagina', getFilmesLocais.getFilmes);
+filmeRoute.get('/search/:query', getFilmesLocais.getSearch);
 
 export {filmeRoute}

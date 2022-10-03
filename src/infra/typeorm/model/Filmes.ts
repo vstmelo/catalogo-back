@@ -8,7 +8,7 @@ export class Filmes {
   @Column("longtext", { name: "description" })
   description: string;
 
-  @Column("varchar", { name: "producer", length: 45 })
+  @Column("tinytext", { name: "producer"})
   producer: string;
 
 
@@ -16,7 +16,7 @@ export class Filmes {
   id: string;
 
   @Column("mediumtext", { name: "movie_banner" })
-  movieBanner: string;
+  movie_banner: string;
 
   @Column("varchar", { name: "director", length: 45 })
   director: string;

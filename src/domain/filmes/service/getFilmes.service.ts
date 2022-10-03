@@ -1,20 +1,21 @@
-import { apiHeroku } from "./api";
-import { SaveBDLocal } from "./saveBDLocalService";
+import { IProps } from "../dtos/filme.dto";
+import { api, } from "./api";
+import { SaveBDLocal } from "./saveBDLocal.service";
 
 const bdLocal = new SaveBDLocal();
 
 export class GetFilmesService {
 
     async getFilmes() {
-        
 
-        const { data: filmes } = await apiHeroku.get('/films', {
+
+        const { data: filmes } = await api.get('/films', {
             params:{
                 per_page: 5
             }
         })
 
-        const dataFilmes = filmes.map((item: any) => {
+        const dataFilmes = filmes.map((item: IProps) => {
             return ({
                 title: item.title,
                 id: item.id,
@@ -30,5 +31,6 @@ export class GetFilmesService {
         return dataFilmes;
 
     };
+
 
 } 

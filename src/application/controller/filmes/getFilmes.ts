@@ -9,4 +9,5 @@ export class FilmesController {
         const filmes = await service.getFilmes();
         return res.json(filmes);
     };
+
 }
